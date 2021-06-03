@@ -24,22 +24,15 @@ public class Board {
     return height;
   }
   
+  public Tile[][] getBoard() {
+    return board;
+  }
+  
   public void display() {        
     for (int i = 0; i < width; i++) {
       for (int j = 0; j < height; j++) {
-        board[i][j].draw();
+        board[i][j].display();
       }
-    }
-    
-    if (mousePressed && mouseButton == RIGHT) {
-      for (Tile[] i : board) {
-        for (Tile j : i) {
-          j.click(true);
-        }
-      }
-    }
-    if (mousePressed && mouseButton == LEFT) {
-      System.out.println("left");
     }
   }
 }

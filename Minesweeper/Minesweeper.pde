@@ -7,3 +7,20 @@ public void settings() {
 void draw() {
   test.display();
 }
+
+void mousePressed() {
+  if (mouseButton == RIGHT) {
+    for (Tile[] i : test.getBoard()) {
+        for (Tile j : i) {
+          j.click(true);
+        }
+      }
+  }
+  if (mouseButton == LEFT) {
+    for (Tile[] i : test.getBoard()) {
+        for (Tile j : i) {
+          j.click(false);
+        }
+      }
+  }
+}

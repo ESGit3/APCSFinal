@@ -1,6 +1,7 @@
 public class Tile {
   private boolean isBomb;
   private boolean hasFlag;
+  private boolean isCovered;
   private int adjacent;
   private int x;
   private int y;
@@ -8,6 +9,7 @@ public class Tile {
   public Tile(int xcor, int ycor) {
     isBomb = false;
     hasFlag = false;
+    isCovered = true;
     adjacent = 0;
     x = xcor;
     y= ycor;
@@ -19,21 +21,35 @@ public class Tile {
   
   public void flag() {
     hasFlag = !hasFlag;
-    System.out.println("flagged");
-    //add flag drawing here
+    
   }
   
   public void click(boolean right) {
-    if ((mouseX > x && mouseX < x + 20) && (mouseY > y && mouseY < y + 20)) {
+    int mouseToX = (int) (mouseX / 20);
+    int mouseToY = (int) (mouseY / 20);
+    
+    if (x == mouseToX && y == mouseToY) {
       if (right) {
         flag();
+      } else {
+        isCovered = false;
       }
     }
   }
   
-  void draw() {
-    strokeWeight(2);
-    fill(222, 222, 222);
-    square(x * 20, y * 20, 20);
+  public void display() {
+    if (isCovered) {
+      strokeWeight(2);
+      fill(222, 222, 222);
+      square(x * 20, y * 20, 20);
+    } else {
+      strokeWeight(2);
+      fill(242, 242, 242);
+      square(x * 20, y * 20, 20);
+    }
+    
+    if (hasFlag) {
+      ellipse(x * 20 + 10, y * 20 + 10, 10, 10);
+    }
   }
 }
