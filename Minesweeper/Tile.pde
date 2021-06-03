@@ -29,7 +29,7 @@ public class Tile {
     int mouseToY = (int) (mouseY / 20);
     
     if (x == mouseToX && y == mouseToY) {
-      if (right) {
+      if (right && isCovered) {
         flag();
       } else {
         isCovered = false;

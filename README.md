@@ -16,3 +16,6 @@ flagging disappears right after click
 possibly bc display is constantly looping, and ends up removing flags
 flags do not show up in the right places
 
+**May 30: ** bugs still exist, display is flickering, and only showing on top left quadrant
+
+**June 2: ** Tiles can now be accurately clicked with the correct coordinates printed. Added new cover variable
