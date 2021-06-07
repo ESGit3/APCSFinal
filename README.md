@@ -1,4 +1,4 @@
-# Final Project: Timed Minesweeper
+# Final Project: 3D Minesweeper
 3DSweeper by Ethan Shan
 
 A 3 Dimensional Minesweeper. Minesweeper is a game where you locate and flag 
@@ -26,5 +26,12 @@ Rule: uncovered tiles cannot be flagged, and flagged tiles cannot be uncovered.
 Mines are placed, mines can be flagged, and when mine is clicked, all mines are revealed
 Game end variable is made
 Goals for next update: adjacent tile numbers
+
+More updates:
+adjacent tile numbers made
+
+goals: when clicking on a tile with (0), do a recursive function to clear all 0s adjacent to that 0
+
+
 
 

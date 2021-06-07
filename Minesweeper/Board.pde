@@ -40,6 +40,52 @@ public class Board {
     for (ArrayList<Integer> i : mines) {
       board[i.get(0)][i.get(1)].setBomb();
     }
+    
+    //adjacent
+    for (int i = 0; i < width; i++) {
+      for (int j = 0; j < height; j++) {
+        try {
+          if (board[i - 1][j - 1].getBomb()) {
+            board[i][j].addAdjacent();
+          }
+        } catch (IndexOutOfBoundsException e) {}
+        try {
+          if (board[i - 1][j].getBomb()) {
+            board[i][j].addAdjacent();
+          }
+        } catch (IndexOutOfBoundsException e) {}
+        try {
+          if (board[i - 1][j + 1].getBomb()) {
+            board[i][j].addAdjacent();
+          }
+        } catch (IndexOutOfBoundsException e) {}
+        try {
+          if (board[i][j - 1].getBomb()) {
+            board[i][j].addAdjacent();
+          }
+        } catch (IndexOutOfBoundsException e) {}
+        try {
+          if (board[i][j + 1].getBomb()) {
+            board[i][j].addAdjacent();
+          }
+        } catch (IndexOutOfBoundsException e) {}
+        try {
+          if (board[i + 1][j - 1].getBomb()) {
+            board[i][j].addAdjacent();
+          }
+        } catch (IndexOutOfBoundsException e) {}
+        try {
+          if (board[i + 1][j].getBomb()) {
+            board[i][j].addAdjacent();
+          }
+        } catch (IndexOutOfBoundsException e) {}
+        try {
+          if (board[i + 1][j + 1].getBomb()) {
+            board[i][j].addAdjacent();
+          }
+        } catch (IndexOutOfBoundsException e) {}
+      }
+    }
   }
   
   public int getWidth() {

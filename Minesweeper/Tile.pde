@@ -15,6 +15,10 @@ public class Tile {
     y= ycor;
   }
   
+  public boolean getBomb() {
+    return isBomb;
+  }
+  
   public void setBomb() {
     isBomb = true;
   }
@@ -61,6 +65,8 @@ public class Tile {
       strokeWeight(2);
       fill(242, 242, 242);
       square(x * 20, y * 20, 20);
+      fill(0);
+      text(adjacent, x * 20 + 7, y * 20 + 15);
     }
     
     if (hasFlag) {
