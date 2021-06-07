@@ -19,7 +19,9 @@ void mousePressed() {
   if (mouseButton == LEFT) {
     for (Tile[] i : test.getBoard()) {
         for (Tile j : i) {
-          j.click(false);
+          if (j.click(false)) {
+            test.endGame();
+          }
         }
       }
   }

@@ -24,7 +24,16 @@ public class Tile {
     
   }
   
-  public void click(boolean right) {
+  public void addAdjacent() {
+    adjacent += 1;
+  }
+  
+  boolean gameEnded = false;
+  public void explode() {
+    gameEnded = true;
+  }
+  
+  public boolean click(boolean right) {
     int mouseToX = (int) (mouseX / 20);
     int mouseToY = (int) (mouseY / 20);
     
@@ -32,9 +41,15 @@ public class Tile {
       if (right && isCovered) {
         flag();
       } else {
-        isCovered = false;
+        if (isBomb) {
+          return true;
+        } else if (!hasFlag) {
+          isCovered = false;
+        }
       }
     }
+    
+    return false;
   }
   
   public void display() {
@@ -50,6 +65,20 @@ public class Tile {
     
     if (hasFlag) {
       ellipse(x * 20 + 10, y * 20 + 10, 10, 10);
+    }
+    
+    if (gameEnded) {
+      if (hasFlag) {
+        fill(0, 255, 0);
+        noStroke();
+        ellipse(x * 20 + 10, y * 20 + 10, 10, 10);
+        stroke(0);
+      } else {
+        fill(255, 0, 0);
+        noStroke();
+        ellipse(x * 20 + 10, y * 20 + 10, 10, 10);
+        stroke(0);
+      }
     }
   }
 }

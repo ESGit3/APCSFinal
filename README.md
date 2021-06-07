@@ -19,3 +19,12 @@ flags do not show up in the right places
 **May 30: ** bugs still exist, display is flickering, and only showing on top left quadrant
 
 **June 2: ** Tiles can now be accurately clicked with the correct coordinates printed. Added new cover variable
+
+**June 7: ** Massive improvements:
+Tiles can be uncovered
+Rule: uncovered tiles cannot be flagged, and flagged tiles cannot be uncovered.
+Mines are placed, mines can be flagged, and when mine is clicked, all mines are revealed
+Game end variable is made
+Goals for next update: adjacent tile numbers
+
+
