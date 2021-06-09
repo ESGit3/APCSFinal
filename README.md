@@ -32,6 +32,8 @@ adjacent tile numbers made
 
 goals: when clicking on a tile with (0), do a recursive function to clear all 0s adjacent to that 0
 
+**June 8: ** Made detection of game end (when all tiles are either flagged or uncovered)
+
 
 
 

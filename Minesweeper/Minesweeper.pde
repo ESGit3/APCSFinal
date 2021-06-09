@@ -1,4 +1,4 @@
-Board test = new Board(15, 15);
+Board test = new Board(15, 153);
 
 public void settings() {
   size(test.getWidth() * 20, test.getHeight() * 20);
@@ -6,6 +6,9 @@ public void settings() {
 
 void draw() {
   test.display();
+  if (test.testWin()) {
+    System.out.println("good job");
+  }
 }
 
 void mousePressed() {

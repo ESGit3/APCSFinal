@@ -32,6 +32,14 @@ public class Tile {
     adjacent += 1;
   }
   
+  public int getAdjacent() {
+    return adjacent;
+  }
+  
+  public boolean isUncoveredOrIsFlagged() {
+    return !isCovered || hasFlag;
+  }
+  
   boolean gameEnded = false;
   public void explode() {
     gameEnded = true;

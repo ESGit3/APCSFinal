@@ -23,7 +23,7 @@ public class Board {
     //create and set mines
     Set<ArrayList<Integer>> tempMines = new HashSet<ArrayList<Integer>>();
     
-    while (tempMines.size() <= 15) {
+    while (tempMines.size() <= 4) {
       ArrayList<Integer> temp = new ArrayList<Integer>();
       temp.add((int) (Math.random() * (width)));
       temp.add((int) (Math.random() * (height)));
@@ -104,6 +104,17 @@ public class Board {
     for (int i = 0; i < mines.size(); i++) {
       board[mines.get(i).get(0)][mines.get(i).get(1)].explode();
     }
+  }
+  
+  public boolean testWin() {
+    for (int i = 0; i < width; i++) {
+      for (int j = 0; j < height; j++) {
+        if (!board[i][j].isUncoveredOrIsFlagged()) {
+          return false;
+        }
+      }
+    }
+    return true;
   }
   
   public void display() {        
