@@ -20,7 +20,7 @@ void mousePressed() {
     for (Tile[][] i : game.getBoard()) {
         for (Tile j[] : i) {
           for (Tile k : j) {
-            k.click(true);
+            k.click(true, currentLayer);
           }
         }
       }
@@ -29,7 +29,7 @@ void mousePressed() {
     for (Tile[][] i : game.getBoard()) {
         for (Tile j[] : i) {
           for (Tile k : j) {
-            if (k.click(false)) {
+            if (k.click(false, currentLayer)) {
             game.endGame();
           }
           }

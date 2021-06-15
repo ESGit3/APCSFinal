@@ -47,11 +47,11 @@ public class Tile {
     gameEnded = true;
   }
   
-  public boolean click(boolean right) {
+  public boolean click(boolean right, int layer) {
     int mouseToX = (int) (mouseX / 20);
     int mouseToY = (int) (mouseY / 20);
     
-    if (x == mouseToX && y == mouseToY) {
+    if (x == mouseToX && y == mouseToY && layer == z) {
       if (right && isCovered) {
         flag();
       } else {
