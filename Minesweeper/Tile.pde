@@ -5,14 +5,16 @@ public class Tile {
   private int adjacent;
   private int x;
   private int y;
+  private int z;
   
-  public Tile(int xcor, int ycor) {
+  public Tile(int xcor, int ycor, int zcor) {
     isBomb = false;
     hasFlag = false;
     isCovered = true;
     adjacent = 0;
     x = xcor;
     y= ycor;
+    z = zcor;
   }
   
   public boolean getBomb() {
